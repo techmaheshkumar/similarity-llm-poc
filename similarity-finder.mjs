@@ -44,12 +44,16 @@ async function calculateTextSimilarity(input1, input2) {
 }
 
 async function main() {
-    const text1 = "Hello, how are you?";
-    const text2 = "Hi, How is doing?";
-
-    console.log("Calculating similarity...");
-    const similarity = await calculateTextSimilarity(text1, text2);
-    console.log(`Similarity between "${text1}" and "${text2}": ${similarity}`);
+try {
+        const text1 = "Hello, how are you?";
+        const text2 = "Hi, How is doing?";
+    
+        console.log("Calculating similarity...");
+        const similarity = await calculateTextSimilarity(text1, text2);
+        console.log(`Similarity between "${text1}" and "${text2}": ${similarity}`);
+     } catch (error) {
+        console.error("An error occurred:", error);
+    }
 }
 
 main().catch(console.error);
